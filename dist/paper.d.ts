@@ -1,5 +1,5 @@
 /*!
- * Paper.js v0.12.4 - The Swiss Army Knife of Vector Graphics Scripting.
+ * Paper.js v0.12.4-grafte - The Swiss Army Knife of Vector Graphics Scripting.
  * http://paperjs.org/
  *
  * Copyright (c) 2011 - 2019, Juerg Lehni & Jonathan Puckey
@@ -9,12 +9,49 @@
  *
  * All rights reserved.
  *
- * Date: Sun Dec 15 21:25:00 2019 +0100
+ * Date: Wed Jan 15 09:40:49 2020 +0100
  *
  * This is an auto-generated type definition.
  */
 
 declare namespace paper {
+
+    /** 
+     * Canvas based view.
+     */
+    class CanvasView  {
+
+        /** 
+         * Creates a view object that wraps a canvas element.
+         * 
+         * @param canvas - the Canvas object that this view should
+         *     wrap
+         */
+        constructor(canvas: HTMLCanvasElement)
+
+        /** 
+         * Creates a view object that wraps a newly created canvas element.
+         * 
+         * @param size - the size of the canvas to be created
+         */
+        constructor(size: Size)
+
+        /** 
+         * Converts the provide size in any of the units allowed in the browser to
+         * pixels.
+         */
+        getPixelSize(size: any): void
+
+        /** 
+         * Updates the view if there are changes. Note that when using built-in
+         * event handlers for interaction, animation and load events, this method is
+         * invoked for you automatically at the end.
+         * 
+         * @return true if the view was updated
+         */
+        update(): boolean
+
+    }
 
     /** 
      * All properties and functions that expect color values in the form
@@ -3253,6 +3290,7 @@ declare namespace paper {
          */
         tools: Tool[]
 
+        CanvasView: typeof CanvasView
         Color: typeof Color
         CompoundPath: typeof CompoundPath
         Curve: typeof Curve

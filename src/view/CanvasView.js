@@ -12,8 +12,7 @@
 
 /**
  * @name CanvasView
- * @class
- * @private
+ * @class Canvas based view.
  */
 var CanvasView = View.extend(/** @lends CanvasView# */{
     _class: 'CanvasView',
@@ -141,8 +140,9 @@ var CanvasView = View.extend(/** @lends CanvasView# */{
             size = this._viewSize;
         ctx.clearRect(0, 0, size.width + 1, size.height + 1);
         if (project)
-            project.draw(ctx, this._matrix, this._pixelRatio);
+            project.draw(ctx, this._matrix, this._pixelRatio, this._drawSelection, this._bounds);
         this._needsUpdate = false;
+        this.emit("update", new Base({}));
         return true;
     }
 });
