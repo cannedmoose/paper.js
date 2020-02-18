@@ -28,7 +28,9 @@ var CanvasView = View.extend(/** @lends CanvasView# */{
      * Creates a view object that wraps a newly created canvas element.
      *
      * @name CanvasView#initialize
-     * @param {Size} size the size of the canvas to be created
+     * @param {Project} project the project the view is associated with
+     * @param {HTMLCanvasElement} canvas the size of the canvas to be created
+     * @param {Size} [size=null] optional size of canvas if element not provided
      */
     initialize: function CanvasView(project, canvas) {
         // Handle canvas argument

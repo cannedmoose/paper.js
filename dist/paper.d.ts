@@ -9,7 +9,7 @@
  *
  * All rights reserved.
  *
- * Date: Wed Jan 15 09:40:49 2020 +0100
+ * Date: Mon Feb 17 12:16:39 2020 +1100
  *
  * This is an auto-generated type definition.
  */
@@ -32,9 +32,11 @@ declare namespace paper {
         /** 
          * Creates a view object that wraps a newly created canvas element.
          * 
-         * @param size - the size of the canvas to be created
+         * @param project - the project the view is associated with
+         * @param canvas - the size of the canvas to be created
+         * @param size - optional size of canvas if element not provided
          */
-        constructor(size: Size)
+        constructor(project: Project, canvas: HTMLCanvasElement, size?: Size)
 
         /** 
          * Converts the provide size in any of the units allowed in the browser to
